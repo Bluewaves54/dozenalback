@@ -3,9 +3,9 @@ from BaseConverter import duo, binary
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def home():
-    return str(duo(3.1234))
+    return {'output': str(duo(3.1234))}
 
 if __name__ == "__main__":
     app.run()
